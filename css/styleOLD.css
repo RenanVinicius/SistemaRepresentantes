@@ -1,0 +1,787 @@
+@import url(http://fonts.googleapis.com/css?family=Ubuntu:300,400,500);
+body{
+	font-family: "Ubuntu";
+	font-size: 15px;
+	outline: none;
+	color: #666;
+	margin: 0px;
+	padding: 0px;
+	background-color: #FFFFFF;
+	background-image: url(../images/body.png);
+	background-repeat: repeat-x;
+	background-position: center top;
+}
+a{
+	text-decoration: none;
+	color: #7B92CA;
+	transition-duration: 0s;
+	-webkit-transition-duration: 0s;
+	outline: none;
+}
+a:hover{
+	transition-duration: 0s;
+	-webkit-transition-duration: 0s;
+	outline: none;
+	color: #292C47;
+}
+img{
+	outline:none;
+	border:0px;
+}
+h1, h2, h3, h4, h5{
+	font-family: "Ubuntu";
+	font-size: 28px;
+	color: #4C6083;
+	margin: 0px;
+	padding: 0px;
+	font-weight: normal;
+}
+
+h6{
+	font-family: "Ubuntu";
+	font-size: 18px;
+	color: #4C6083;
+	margin: 0px;
+	padding: 0px;
+	font-weight: normal;
+}
+::-moz-selection{
+	background:#4C6083;
+	color:#f5f5f5;
+}
+::selection {
+	background:#4C6083;
+	color:#f5f5f5;
+}
+input[type=email], input[type=text], input[type=password], select, textarea{
+	padding: 10px;
+	border: 1px solid #dfdfdf;
+	font-family: inherit;
+	color: #666666;
+	outline: none;
+	background-color: #f5f5f5;
+}
+input[type=submit], input[type=reset]{
+	background-image: url(../images/content-button.png);
+	background-repeat: repeat-x;
+	background-position: center center;
+	display: block;
+	border-radius: 3px;
+	text-align: center;
+	padding: 7px;
+	color: #666;
+	border: 1px solid #CCCCCC;
+	text-shadow:1px 1px 0px #fff;
+	box-shadow: 1px 1px 2px #f5f5f5;
+	font-size: 14px;
+	font-family: inherit;
+	cursor: pointer;
+}
+
+header{
+	background-image: url(../images/header.jpg);
+	height: 155px;
+	background-repeat: no-repeat;
+	background-position: left center;
+	background-color: #FFF;
+	z-index:170;
+}
+header .align{
+	height: 155px;
+	width: 980px;
+	margin-right: auto;
+	margin-left: auto;
+	position: relative;
+}
+header .logo a{
+	position: absolute;
+	background-image: url(../images/logo.png);
+	display: block;
+	height: 86px;
+	width: 325px;
+	top: 17px;
+}
+header .logo a{
+	position:absolute;
+}
+header .wellcome{
+	position: absolute;
+	left: 614px;
+	top: 75px;
+	font-size: 17px;
+	text-align: right;
+	width: 354px;
+}
+header .fraudes a{
+	position: absolute;
+	display: block;
+	background-color: #37475E;
+	text-shadow: 1px 1px 0px #333;
+	padding-top: 10px;
+	padding-bottom: 10px;
+	padding-left: 10px;
+	font-size: 18px;
+	color: #f5f5f5;
+	padding-right: 10px;
+	left: 696px;
+	top: 17px;
+}
+header .ir a{
+	position: absolute;
+	display: block;
+	background-color: #37475E;
+	text-shadow: 1px 1px 0px #333;
+	padding-top: 10px;
+	padding-bottom: 10px;
+	padding-left: 10px;
+	left: 549px;
+	top: 17px;
+	font-size: 18px;
+	color: #f5f5f5;
+	padding-right: 10px;
+}
+header .sistem a{
+	position: absolute;
+	display: block;
+	background-color: #37475E;
+	text-shadow: 1px 1px 0px #333;
+	padding-top: 10px;
+	padding-bottom: 10px;
+	padding-left: 10px;
+	left: 700px;
+	top: 17px;
+	font-size: 18px;
+	color: #f5f5f5;
+	padding-right: 10px;
+}
+header .logout a{
+	position: absolute;
+	background-image: url(../images/header-logout.png);
+	background-repeat: no-repeat;
+	background-position: 5px center;
+	display: block;
+	background-color: #37475E;
+	text-shadow: 1px 1px 0px #333;
+	padding-top: 10px;
+	padding-bottom: 10px;
+	padding-left: 30px;
+	left: 801px;
+	top: 17px;
+	font-size: 18px;
+	color: #f5f5f5;
+	padding-right: 10px;
+}
+/*
+ ==========================================================
+ header
+ ==========================================================
+*/
+
+/*
+ ==========================================================
+ nav
+ ==========================================================
+*/
+#back-nav{
+	background-image: url(../images/back-nav.png);
+	background-repeat: repeat-x;
+	background-position: center center;
+	height: 53px;
+}
+#back-nav .align{
+	position:relative;
+	width:980px; height:53px;
+	margin-left:auto;
+	margin-right:auto;
+}
+.ddsmoothmenu{
+	width: 100%;
+	font-weight: bold;
+	color: #666;
+	font-style: normal;
+	line-height: normal;
+	font-variant: normal;
+		z-index:200;
+	text-decoration: none;
+}
+
+.ddsmoothmenu ul{
+z-index:100;
+margin: 0;
+padding: 0;
+list-style-type: none;
+}
+
+/*Top level list items*/
+.ddsmoothmenu ul li{
+	position: relative;
+	display: inline;
+	float: left;
+}
+
+/*Top level menu link items style*/
+.ddsmoothmenu ul li a{
+	display: block;
+	text-decoration: none;
+	padding-top: 14px;
+	padding-bottom: 14px;
+	padding-left: 7px;
+	padding-right: 7px;
+	font-weight: normal;
+	font-variant: normal;
+	outline: none;
+	background-image: url(../images/menu_outros.png);
+	background-repeat: repeat-x;
+	background-position: center bottom;
+	margin-left: 2px;
+	margin-right: 2px;
+	font-family: "Ubuntu";
+}
+
+* html .ddsmoothmenu ul li a{ /*IE6 hack to get sub menu links to behave correctly*/
+	display: inline-block;
+}
+.ddsmoothmenu ul li a:link, .ddsmoothmenu ul li a:visited{
+	font-size: 18px;
+	color: #f5f5f5;
+}
+.ddsmoothmenu ul li a.selected{ /*CSS class that's dynamically added to the currently active menu items' LI A element*/
+	color: #FFFFFF;
+	background-image: url(../images/menu_outros.png);
+	text-decoration: none;
+	background-color: #515F7A;
+}
+.ddsmoothmenu ul li a:hover{
+	color: #FFFFFF;
+	text-decoration: none;
+	background-color: #515F7A;
+}
+
+
+/*1st sub level menu*/
+.ddsmoothmenu ul li ul{
+	position: absolute;
+	left: 0;
+	display: none; /*collapse all sub menus to begin with*/
+	visibility: hidden;
+	border-top-width: 0px;
+	border-right-width: 0px;
+	border-bottom-width: 0px;
+	border-left-width: 0px;
+	padding: 0px;
+}
+
+/*Sub level menu list items (undo style from Top level List Items)*/
+.ddsmoothmenu ul li ul li{
+display: list-item;
+float: none;
+}
+
+/*All subsequent sub menu levels vertical offset after 1st level sub menu */
+.ddsmoothmenu ul li ul li ul{
+
+}
+
+/* Sub level menu links style */
+.ddsmoothmenu ul li ul li a{
+	width: 200px;
+	text-align: left;
+	font-size: 13px;
+	font-style: normal;
+	font-weight: normal;
+	font-variant: normal;
+	padding: 5px;
+	background-color: #4E5C77;
+}
+.ddsmoothmenu ul li ul li a:hover{
+	color: #FFFFFF;
+	text-decoration: none;
+	background-color: #6A7893;
+}
+/* Holly Hack for IE \*/
+* html .ddsmoothmenu{height: 1%;} /*Holly Hack for IE7 and below*/
+
+/* ######### CSS classes applied to down and right arrow images  ######### */
+
+.downarrowclass{
+	position: absolute;
+	top: 12px;
+}
+
+.rightarrowclass{
+	position: absolute;
+	top: 6px;
+	right: 5px;
+}
+
+/* ######### CSS for shadow added to sub menus  ######### */
+.ddshadow{
+	position: absolute;
+	left: 0;
+	top: 0;
+	width: 0;
+	height: 0;
+}
+
+.toplevelshadow{ /*shadow opacity. Doesn't work in IE*/
+opacity: 0.8;
+}
+
+/*
+ ==========================================================
+ nav
+ ==========================================================
+*/
+
+/*
+ ==========================================================
+ content
+ ==========================================================
+*/
+#content{
+	background-color: #FFF;
+	padding: 10px;
+	width: 960px;
+	margin-right: auto;
+	margin-left: auto;
+	border-right-width: 1px;
+	border-left-width: 1px;
+	border-right-style: solid;
+	border-left-style: solid;
+	border-right-color: #dfdfdf;
+	border-left-color: #dfdfdf;
+	border-bottom-width: 1px;
+	border-bottom-style: solid;
+	border-bottom-color: #dfdfdf;
+}
+.titulos_pages{
+	font-family: "Ubuntu";
+	font-size: 28px;
+	color: #4C6083;
+	margin-bottom:10px;
+	padding: 0px;
+}
+
+
+#top_table{
+	height: 40px;
+	position: relative;
+}
+.coluna_table{
+	position: relative;
+	background-color: #F8F8F8;
+	height: 40px;
+	border-bottom-width: 1px;
+	border-bottom-style: solid;
+	border-bottom-color: #dfdfdf;
+}
+.coluna_table:hover{
+	background-color: #F2F2F2;
+}
+#bar_table{
+	width: 950px;
+	margin-right: auto;
+	margin-left: auto;
+}
+.editar_deletar{
+	text-decoration: none;
+	display: block;
+	float: left;
+	padding-top: 3px;
+	padding-right: 5px;
+	padding-bottom: 3px;
+	padding-left: 5px;
+	color: #666;
+	font-weight: bold;
+	font-size: 14px;
+}
+.inserir a{
+	background-image: url(../images/content-button.png);
+	background-repeat: repeat-x;
+	text-shadow:1px 1px 0px #fff;
+	background-position: center center;
+	display: block;
+	width: 140px;
+	border-radius: 3px;
+	text-align: center;
+	padding: 7px;
+	color: #666;
+	border: 1px solid #CCCCCC;
+	box-shadow: 1px 1px 2px #f5f5f5;
+	font-size: 15px;
+}
+/*
+ ==========================================================
+ content
+ ==========================================================
+*/
+
+/*
+ ==========================================================
+ footer
+ ==========================================================
+*/
+footer{
+	background-image: url(../images/footer-shadow.png);
+	height: 100px;
+	width: 981px;
+	margin-right: auto;
+	margin-left: auto;
+	position: relative;
+	background-repeat: no-repeat;
+	background-position: center top;
+}
+footer .telefone{
+	position: absolute;
+	font-size: 30px;
+	font-family: "Ubuntu";
+	color: #666666;
+	line-height: 20px;
+	top: 28px;
+	left: 5px;
+}
+footer .sep{
+	position: absolute;
+	background-color: #999;
+	height: 50px;
+	width: 1px;
+	left: 197px;
+	top: 33px;
+}
+footer .email{
+	position: absolute;
+	font-size: 30px;
+	font-family: "Ubuntu";
+	color: #666666;
+	line-height: 20px;
+	top: 28px;
+	left: 250px;
+}
+footer .versao{
+	position: absolute;
+	left: 794px;
+	top: 44px;
+	text-align: right;
+}
+/*
+ ==========================================================
+ footer
+ ==========================================================
+*/
+
+/*home*/
+#ref{
+	text-align:left;
+}
+#ref .title{
+	font-size: 18px;
+	color: #274B6D;
+	text-align: center;
+	margin-top: 10px;
+	margin-bottom: 20px;
+}
+#ref hr{
+	border: 1px solid #CCC;
+}
+/*home*/
+ 
+/*
+ ==========================================================
+ representantes
+ ==========================================================
+*/
+#back-select-rep{
+	position: fixed;
+	left: 0px;
+	top: 0px;
+	right: 0px;
+	bottom: 0px;
+	background-image: url(../images/back-select-rep.png);
+	z-index: 150;
+	margin-top: 208px;
+}
+#back-select-rep .content{
+	margin-right: auto;
+	margin-left: auto;
+	border: 1px solid #dfdfdf;
+	margin-top: 150px;
+	box-shadow: 0px 0px 5px #eeeeee;
+	border-radius: 3px;
+	background: #ffffff; /* Old browsers */
+	background: -moz-linear-gradient(top,  #ffffff 6%, #ededed 100%); /* FF3.6+ */
+	background: -webkit-gradient(linear, left top, left bottom, color-stop(6%,#ffffff), color-stop(100%,#ededed)); /* Chrome,Safari4+ */
+	background: -webkit-linear-gradient(top,  #ffffff 6%,#ededed 100%); /* Chrome10+,Safari5.1+ */
+	background: -o-linear-gradient(top,  #ffffff 6%,#ededed 100%); /* Opera 11.10+ */
+	background: -ms-linear-gradient(top,  #ffffff 6%,#ededed 100%); /* IE10+ */
+	background: linear-gradient(to bottom,  #ffffff 6%,#ededed 100%); /* W3C */
+	filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#ffffff', endColorstr='#ededed',GradientType=0 ); /* IE6-9 */
+	padding: 20px;
+	width: 400px;
+}
+#back-list-visitas{
+}
+#back-list-visitas .coluna-visitas{
+	margin-top: 10px;
+	margin-bottom: 10px;
+	border: 1px solid #dfdfdf;
+	box-shadow: 0px 0px 5px #eeeeee;
+	border-radius: 3px;
+	background: #ffffff; /* Old browsers */
+	background: -moz-linear-gradient(top,  #ffffff 6%, #ededed 100%); /* FF3.6+ */
+	background: -webkit-gradient(linear, left top, left bottom, color-stop(6%,#ffffff), color-stop(100%,#ededed)); /* Chrome,Safari4+ */
+	background: -webkit-linear-gradient(top,  #ffffff 6%,#ededed 100%); /* Chrome10+,Safari5.1+ */
+	background: -o-linear-gradient(top,  #ffffff 6%,#ededed 100%); /* Opera 11.10+ */
+	background: -ms-linear-gradient(top,  #ffffff 6%,#ededed 100%); /* IE10+ */
+	background: linear-gradient(to bottom,  #ffffff 6%,#ededed 100%); /* W3C */
+	filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#ffffff', endColorstr='#ededed',GradientType=0 ); /* IE6-9 */
+	padding: 20px;
+	text-shadow: 1px 1px 0px #f5f5f5;
+	position: relative;
+	font-size: 18px;
+}
+#back-list-visitas .coluna-visitas:hover {
+		border: 1px solid #ccc;
+}
+#back-list-visitas .data-hora{
+	font-family: "Open Sans";
+	font-size: 20px;
+	color: #36445B;
+}
+#back-list-visitas .info{
+	margin-top: 4px;
+	margin-bottom: 4px;
+}
+#back-list-visitas .obs-cliente{
+	border-bottom-width: 1px;
+	border-bottom-style: solid;
+	border-bottom-color: #CCCCCC;
+	padding-bottom: 10px;
+	font-size: 15px;
+}
+#back-list-visitas .inserido-por{
+	font-size: 13px;
+	position: absolute;
+	left: 620px;
+	top: 16px;
+}
+
+#back-list-visitas .editado-por{
+	font-size: 13px;
+	position: absolute;
+	left: 834px;
+	top: 36px;
+}
+
+#back-list-visitas .deletar{
+	font-size: 13px;
+	position: absolute;
+	left: 880px;
+	top: 58px;
+}
+
+#back-list-visitas .editar{
+	font-size: 13px;
+	position: absolute;
+	left: 828px;
+	top: 58px;
+}
+
+
+#back-list-visitas .deletado-por{
+	font-size: 20px;
+	position: absolute;
+	left: 468px;
+	top: 70px;
+	color: #F00;
+}
+
+#back-inserir-rep{
+	position: fixed;
+	left: 0px;
+	top: 0px;
+	right: 0px;
+	bottom: 0px;
+	background-image: url(../images/back-select-rep.png);
+	z-index: 150;
+	margin-top:0px;
+}
+#back-inserir-rep .content{
+	margin-right: auto;
+	margin-left: auto;
+	border: 1px solid #dfdfdf;
+	margin-top: 30px;
+	box-shadow: 0px 0px 5px #eeeeee;
+	border-radius: 3px;
+	background: #ffffff; /* Old browsers */
+	background: -moz-linear-gradient(top,  #ffffff 6%, #ededed 100%); /* FF3.6+ */
+	background: -webkit-gradient(linear, left top, left bottom, color-stop(6%,#ffffff), color-stop(100%,#ededed)); /* Chrome,Safari4+ */
+	background: -webkit-linear-gradient(top,  #ffffff 6%,#ededed 100%); /* Chrome10+,Safari5.1+ */
+	background: -o-linear-gradient(top,  #ffffff 6%,#ededed 100%); /* Opera 11.10+ */
+	background: -ms-linear-gradient(top,  #ffffff 6%,#ededed 100%); /* IE10+ */
+	background: linear-gradient(to bottom,  #ffffff 6%,#ededed 100%); /* W3C */
+	filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#ffffff', endColorstr='#ededed',GradientType=0 ); /* IE6-9 */
+	padding: 20px;
+	width: 480px;
+}
+.coluna-coment{
+	font-size: 14px;
+	color: #666666;
+	background-color: #C1CBDB;
+	padding: 10px;
+	text-shadow: 1px 1px 0px #C1CBDB;
+	margin-bottom: 2px;
+	border-radius: 4px;
+}
+/*
+ ==========================================================
+ representantes
+ ==========================================================
+*/
+/*
+relatorios
+*/
+#baloes{
+	margin-top: 10px;
+	margin-bottom: 10px;
+	height: 250px;
+}
+#baloes strong{
+	font-size: 20px;
+	margin: 0px;
+	padding: 0px;
+	font-weight: normal;
+}
+#baloes .a{
+	background-color: #465979;
+	font-family: "Ubuntu";
+	color: #FFF;
+	font-weight: normal;
+	border-radius: 100%;
+	text-align: center;
+	font-size: 100px;
+	line-height: 20px;
+	padding-right: 0px;
+	padding-left: 0px;
+	height: 108px;
+	width: 165px;
+	float: left;
+	margin-right: 0px;
+	margin-bottom: 0px;
+	margin-left: 0px;
+	margin-top: 20px;
+	padding-top: 50px;
+}
+#baloes .b{
+	background-color: #7288AD;
+	font-family: "Ubuntu";
+	color: #FFF;
+	font-weight: normal;
+	border-radius: 100%;
+	text-align: center;
+	font-size: 100px;
+	line-height: 20px;
+	padding-right: 0px;
+	padding-left: 0px;
+	height: 108px;
+	width: 165px;
+	float: left;
+	margin-right: 0px;
+	margin-bottom: 0px;
+	margin-left: 15px;
+	margin-top: 20px;
+	padding-top: 50px;
+}
+#baloes .c{
+	background-color: #D90000;
+	font-family: "Ubuntu";
+	color: #FFF;
+	font-weight: normal;
+	border-radius: 100%;
+	text-align: center;
+	font-size: 100px;
+	line-height: 20px;
+	padding-right: 0px;
+	padding-left: 0px;
+	height: 108px;
+	width: 165px;
+	float: left;
+	margin-right: 0px;
+	margin-bottom: 0px;
+	margin-left: 15px;
+	margin-top: 20px;
+	padding-top: 50px;
+}
+#baloes .d{
+	background-color: #59B200;
+	font-family: "Ubuntu";
+	color: #FFF;
+	font-weight: normal;
+	border-radius: 100%;
+	text-align: center;
+	font-size: 100px;
+	line-height: 20px;
+	padding-right: 0px;
+	padding-left: 0px;
+	height: 108px;
+	width: 165px;
+	float: left;
+	margin-right: 0px;
+	margin-bottom: 0px;
+	margin-left: 15px;
+	margin-top: 20px;
+	padding-top: 50px;
+}
+
+.pg{
+	font-size: 13px;
+	font-style: normal;
+	line-height: normal;
+	font-weight: normal;
+	font-variant: normal;
+	color: #FFFFFF;
+	margin-right: 3px;
+	margin-left: 1px;
+	padding-top: 3px;
+	padding-right: 5px;
+	padding-bottom: 3px;
+	padding-left: 5px;
+	border: 1px solid #4C6083;
+
+	background-color: #333;
+	background-image: url(../images/botao2.png);
+	background-repeat: repeat-x;
+	background-position: center top;
+	border-radius:3px;
+}
+.pg:hover{
+	color:#4C6083;
+	text-decoration: none;
+	background-image:url(../images/botao2.png);
+	background-position: center bottom;
+	border-top-color: #4C6083;
+	border-right-color: #4C6083;
+	border-bottom-color: #4C6083;
+	border-left-color: #4C6083;
+}
+.pg_selected, .pg_selected:hover{
+	border-radius:3px;
+	font-size: 13px;
+	font-style: normal;
+	line-height: normal;
+	font-weight: normal;
+	font-variant: normal;
+	color: #4C6083;
+	margin-right: 3px;
+	margin-left: 1px;
+	padding-top: 3px;
+	padding-right: 6px;
+	padding-bottom: 3px;
+	padding-left: 6px;
+	border: 1px solid #4C6083;
+	background-image: url(../images/botao2.png));
+	background-repeat: repeat-x;
+	background-position: center bottom;
+}
+/*
+relatorios
+*/

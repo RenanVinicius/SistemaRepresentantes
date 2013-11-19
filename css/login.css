@@ -1,0 +1,114 @@
+body{
+	margin: 0px;
+	padding: 0px;
+	background-image: url(../images/login-body.jpg);
+	background-repeat: no-repeat;
+	background-position: center top;
+}
+::-moz-selection{
+	background:#4C6083;
+	color:#f5f5f5;
+}
+::selection {
+	background:#4C6083;
+	color:#f5f5f5;
+}
+#logo{
+	background-image: url(../images/login-logo.png);
+	height: 63px;
+	width: 325px;
+	margin-right: auto;
+	margin-left: auto;
+	margin-top: 90px;
+	display: block;
+}
+header{
+	background-image: url(../images/login-back-box.png);
+	height: 278px;
+	width: 410px;
+	margin-right: auto;
+	margin-left: auto;
+	margin-top: 20px;
+	display: block;
+	border-radius: 10px;
+	border: 2px solid #1C242F;
+	position: relative;
+}
+form legend{
+	font-family: "Open Sans Condensed";
+	font-size: 30px;
+	color: #CCC;
+	margin-top: 15px;
+	margin-bottom: 15px;
+	display: block;
+	text-align: center;
+	text-shadow: 1px 1px 0px #000;
+	margin-right: auto;
+	margin-left: auto;
+}
+form .form_login{
+	background-image: url(../images/login-forms.png);
+	height: 45px;
+	width: 304px;
+	border-top-width: 0px;
+	border-right-width: 0px;
+	border-bottom-width: 0px;
+	border-left-width: 0px;
+	background-color: transparent;
+	padding-left: 50px;
+	font-family: "Quattrocento Sans";
+	font-size: 15px;
+	color: #666;
+	display: block;
+	margin-right: auto;
+	outline:none;
+	margin-left: auto;
+}
+form .form_senha{
+	background-image: url(../images/login-forms.png);
+	height: 45px;
+	width: 304px;
+	border-top-width: 0px;
+	border-right-width: 0px;
+	border-bottom-width: 0px;
+	border-left-width: 0px;
+	background-color: transparent;
+	padding-left: 50px;
+	font-family: "Quattrocento Sans";
+	font-size: 15px;
+	color: #666;
+	display: block;
+	margin-right: auto;
+	margin-left: auto;
+	outline:none;
+	margin-top: 15px;
+}
+.botao{
+	font-family: "Open Sans Condensed";
+	font-size: 25px;
+	color: #FFF;
+	background-image: url(../images/login-button.png);
+	background-repeat: repeat-x;
+	background-position: center center;
+	border: 0;
+	margin-top: 15px;
+	text-transform: uppercase;
+	cursor: pointer;
+	text-shadow: 1px 1px 0px #324200;
+	margin-left: 26px;
+	display: block;
+}
+#resultado_login{
+	font-family: "Quattrocento Sans";
+	color: #CCC;
+	margin-top: 10px;
+	margin-left: 28px;
+	text-shadow:1px 1px 0px #1C242F;
+}
+input-placeholder {
+	color: #999;
+	display: block;
+}
+::-moz-placeholder { color:#999; }
+:-ms-input-placeholder { color:#999; }
+input:-moz-placeholder { color:#999; }

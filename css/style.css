@@ -1,0 +1,11 @@
+#menu{
+	width: 980px;
+	margin: 0 auto;
+}
+#content{
+	width: 980px;
+	margin: 0 auto;
+}
+.clear{
+	clear: both;
+}
