@@ -1,221 +1,62 @@
 <?php 
 
-	/*function watermark($arquivo, $pasta){
-			
-		require('../config/imagizer.php');
 
-		$img = getimagesize($pasta.$arquivo);		
-		imagizer($pasta.$arquivo, $img[0], $img[1], 1, 0, $pasta.$arquivo, "jpg", "watermark/watermark.png", 3);
-		
-	}*/
-
-	function resizeImage($foto, $pasta, $largura){
-		
-		// Chama o arquivo com a classe WideImage
-		require('../../upload.lib/WideImage.inc.php');
-
-		// Carrega a imagem a ser manipulada
-		$image = wiImage::load($pasta.$foto);
-		
-		$image = $image->resize($largura);
-
-		// titulo da imagem
-		$nome_foto = md5(uniqid(time()));
-		
-		// Salva a imagem em um arquivo (novo ou não)
-		$image->saveToFile($pasta.'/'.$nome_foto.'.jpg');
-
-		//Deleta a foto temporária
-		unlink($pasta.$foto);
-		
-		return $nome_foto . '.jpg';
-		
+	function procpalavras ($frase, $palavras, $resultado = 0) {
+	      foreach ( $palavras as $key => $value ) {
+	      $pos = strpos($frase, $value);
+	      if ($pos !== false) { $resultado = 1; break; }
+	      } 
+	  return $resultado;
 	}
 
-
-	#$fotoForm = foto recebida do formulário $_FILES
-	#$formatoRedir = resize ou crop (se resize, colocar apenas largura máxima para redimencionar) (se crop, colocar posição, largura e altura fixa)
-	#$pasta = diretório que ficará a imagem (após a pasta uploads)
-	
-	function enviaFoto($fotoForm, $pasta, $formatoRedir, $posicao, $larguraMaxima, $larguraFixa, $alturaFixa){
-		
-		$foto = $fotoForm;
-		
-		// Chama o arquivo com a classe WideImage
-		require('../upload.lib/WideImage.inc.php');
-		
-		//Diretório temporário
-		$dir = '../uploads/';
-		
-		//titulo temporário
-		$name = $foto['name'];
-		
-		//Arquivo temporario
-		$tmpName = $foto['tmp_name'];
-
-		//Envia a foto temporaria
-		move_uploaded_file($tmpName, $dir.$name);
-		
-		// Carrega a imagem a ser manipulada
-		$image = wiImage::load("../uploads/".$name."");
-		
-		//Define o tipo de corte
-		if($formatoRedir == "resize"){
-			
-			$image = $image->resize($larguraMaxima);
-			
-		}elseif($formatoRedir == "crop"){
-			
-			$image = $image->crop($posicao, $posicao, $larguraFixa, $alturaFixa);
-			
-		}
-		
-		// titulo da imagem
-		$nome_foto = md5(uniqid(time()));
-		
-		// Salva a imagem em um arquivo (novo ou não)
-		$image->saveToFile('../uploads/'.$pasta.'/'.$nome_foto.'.jpg');
-
-		//Deleta a foto temporária
-		unlink("../uploads/".$name."");
-		
-		return $nome_foto . '.jpg';
-		
+	function geraLogin($var1, $var2){
+		return substr($var1, 0, 3).substr($var2, 0, 3);
 	}
 
-	function enviaFotoInt($fotoForm, $pasta, $formatoRedir, $posicao, $larguraMaxima, $larguraFixa, $alturaFixa){
-		
-		$foto = $fotoForm;
-		
-		// Chama o arquivo com a classe WideImage
-		require('upload.lib/WideImage.inc.php');
-		
-		//Diretório temporário
-		$dir = 'uploads/';
-		
-		//titulo temporário
-		$name = $foto['name'];
-		
-		//Arquivo temporario
-		$tmpName = $foto['tmp_name'];
+	#Função para verificar a força da senha
+	/*
+	COMO USAR
+	$teste = verificaSenha($senha);
 
-		//Envia a foto temporaria
-		move_uploaded_file($tmpName, $dir.$name);
-		
-		// Carrega a imagem a ser manipulada
-		$image = wiImage::load("uploads/".$name."");
-		
-		//Define o tipo de corte
-		if($formatoRedir == "resize"){
-			
-			$image = $image->resize($larguraMaxima);
-			
-		}elseif($formatoRedir == "crop"){
-			
-			$image = $image->crop($posicao, $posicao, $larguraFixa, $alturaFixa);
-			
-		}
-		
-		// titulo da imagem
-		$nome_foto = md5(uniqid(time()));
-		
-		// Salva a imagem em um arquivo (novo ou não)
-		$image->saveToFile('uploads/'.$pasta.'/'.$nome_foto.'.jpg');
-
-		//Deleta a foto temporária
-		unlink("uploads/".$name."");
-		
-		return $nome_foto . '.jpg';
-		
+	switch($teste){
+	        case 1: echo "Senha Ruim!"; break;
+	        case 2: echo "Senha Fraca!"; break;
+	        case 3: echo "Senha Boa!"; break;
+	        case 4: echo "Senha Ótima!"; break;
+	        case 5: echo "Senha Excelente!"; break;
 	}
-
-#Função para verificar a força da senha
-/*
-COMO USAR
-$teste = verificaSenha($senha);
-
-switch($teste){
-        case 1: echo "Senha Ruim!"; break;
-        case 2: echo "Senha Fraca!"; break;
-        case 3: echo "Senha Boa!"; break;
-        case 4: echo "Senha Ótima!"; break;
-        case 5: echo "Senha Excelente!"; break;
-}
-*/
-function verificaSenha($pass){
-	
-	$len = strlen($pass);
-	$count = 0;
-	$array = array("[[:lower:]]+", "[[:upper:]]+", "[[:digit:]]+", "[!#_-]+");
-        
-	foreach($array as $a){
-		if(ereg($a, $pass)){
-			$count++;
-		}
-	}
-        
-	if($len > 10){
-		$count++;
-	}
-
-	return $count;
-
-}
-
-#Função para forçar o usuário a digitar letras e números na senha
-function forcaSenha($senha){
-	$senhaDigitada = intval(preg_match('/^[a-z\d]+$/i', $senha) && preg_match('/[a-z]/i', $senha) && preg_match('/\d/', $senha));
-	if($senhaDigitada == 1){
-		return true;
-	}else{
-		return false;
-	}
-}
-
-function sql_textos($tipo, $limite, $replaces){
-    //Verifica se a solicitação da função possuí todos os dados.
-    if($tipo && $limite == false){
-		//Se não tiver os dados, imprime mensagem de erro.
-	      return htmlentities('Os campos necessários não foram informados!');
-	}else{
-		//Caso a solicitação estiver correta, busca os dados no banco.
-	      $sql = @mysql_query("SELECT * FROM textos WHERE tipo = '$tipo'");
-		//Busca o total de linhas para os dados recebidos.
-		$cont = @mysql_num_rows($sql);
-		//Se a contagem de linha retornar em zero, imprime mensagem de erro.
-		if($cont == false){
-		    echo htmlentities('As informações recebidas não foram suficiente para retornar os dados do banco de dados');
-		}else{
-			//Caso a contagem de linhas retornar em "true", busca a linha solicitada.
-		      $ln = @mysql_fetch_object($sql);
-			//Se a solicitação for para mostrar os dados sem tags html.
-		       if($replaces == true){
-			       return strip_tags(truncate($ln->texto, $limite));
-			}else{
-			       return truncate($ln->texto, $limite);
+	*/
+	function verificaSenha($pass){
+		
+		$len = strlen($pass);
+		$count = 0;
+		$array = array("[[:lower:]]+", "[[:upper:]]+", "[[:digit:]]+", "[!#_-]+");
+	        
+		foreach($array as $a){
+			if(ereg($a, $pass)){
+				$count++;
 			}
 		}
+	        
+		if($len > 10){
+			$count++;
+		}
+
+		return $count;
+
 	}
-}
 
-
-	function data_sistem($value){
-		$sql = mysql_query("SELECT * FROM system");
-		$result = mysql_num_rows($sql);
-		if($result == true){
-			$ln = mysql_fetch_object($sql);
-			echo $ln->$value;
+	#Função para forçar o usuário a digitar letras e números na senha
+	function senhaLetrasNumeros($senha){
+		$senhaDigitada = intval(preg_match('/^[a-z\d]+$/i', $senha) && preg_match('/[a-z]/i', $senha) && preg_match('/\d/', $senha));
+		if($senhaDigitada == 1){
+			return true;
+		}else{
+			return false;
 		}
 	}
-	
-	function data_sistem_sql($value){
-		$sql = mysql_query("SELECT * FROM system");
-		$result = mysql_num_rows($sql);
-		if($result == true){
-			$ln = mysql_fetch_object($sql);
-			return $ln->$value;
-		}
-	}
+
+
 
 	function anti_inject($campo, $adicionaBarras = false) {
 		$campo = preg_replace("/(from|alter table|select|insert|delete|update|where|drop table|show tables|#|\*|--|\\\\)/i","",$campo);

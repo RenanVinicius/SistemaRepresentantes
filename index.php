@@ -5,10 +5,10 @@
 
 	header('Content-Type: text/html; charset=utf-8');
 
-	include_once("config/conexao.php");
-	include_once("config/funcoesGerais.php");
-	include_once("config/sendMail.php");
-	include_once("config/auth.php");
+	include_once("system/conexao.php");
+	include_once("system/funcoes.php");
+	include_once("system/sendMail.php");
+	include_once("system/auth.php");
 
 	@date_default_timezone_set('America/Sao_Paulo');	
 
@@ -23,6 +23,7 @@
 <script src="js/jquery.js"></script>
 <script src="js/bootstrap.js"></script>
 <script src="js/bootstrap-tab.js"></script>
+<script src="js/jquery.maskedinput.js"></script>
 <script src="js/scripts.js"></script>
 
 <link rel="stylesheet" type="text/css" href="css/style.css">
@@ -37,21 +38,21 @@
 					<li class="active"><a href="#">Início</a></li>
 					<li class="divider-vertical"></li>
 					<li class="dropdown">
-						<a href="#" class="dropdown-toggle" data-toggle="dropdown">Gerenciar Representantes <b class="caret"></b></a>
+						<a href="javascript: webinVoid();" class="dropdown-toggle" data-toggle="dropdown">Gerenciar Representantes <b class="caret"></b></a>
 						<ul class="dropdown-menu">
-							<li><a href="?secao=pages/visitas&acao=lista">Listar todos</a></li>
-							<li><a href="?secao=pages/visitas&acao=inserir">Inserir um novo</a></li>
+							<li><a href="?secao=controller/representantes&acao=lista">Listar todos</a></li>
+							<li><a href="?secao=controller/representantes&acao=inserir">Inserir um novo</a></li>
 						</ul>
 					</li>
 					<li class="divider-vertical"></li>
 					<li class="dropdown">
 						<a href="#" class="dropdown-toggle" data-toggle="dropdown">Minhas visitas <b class="caret"></b></a>
 						<ul class="dropdown-menu">
-							<li><a href="?secao=pages/visitas&acao=lista">Ver todas</a></li>
-							<li><a href="?secao=pages/visitas&acao=inserir">Agendar uma nova</a></li>
+							<li><a href="?secao=controller/visitas&acao=lista">Ver todas</a></li>
+							<li><a href="?secao=controller/visitas&acao=inserir">Agendar uma nova</a></li>
 							<li class="divider"></li>
 							<li class="nav-header">Outros recursos</li>
-							<li><a href="?secao=pages/visitas&acao=deletadas">Ver visitas deletadas</a></li>
+							<li><a href="?secao=controller/visitas&acao=deletadas">Ver visitas deletadas</a></li>
 						</ul>
 					</li>
 				</ul>
@@ -73,9 +74,9 @@
 <div class="alert alert-success">
 	<button type="button" class="close" data-dismiss="alert">&times;</button>
 		<h1 class="alert-heading">Novo sistema de Representantes</h1>
-		<p>Esse novo sistema contém correções novas ferramentas e correções de bugs.</p>
+		<p>Esse novo sistema contém novas ferramentas e correções de bugs.</p>
 		<p>
-			<a class="btn btn-success" href="#">Continar por aqui</a> <a class="btn" href="#">Voltar para o antigo</a>
+			<a class="btn btn-success" href="#">Continuar por aqui</a> <a class="btn" href="#">Voltar para o antigo</a>
 		</p>
 </div>
 
@@ -84,7 +85,7 @@
 	if(file_exists("$pg.php") == true){
 		@include_once("$pg.php");
 	}else{
-		header("Location: index.php?secao=pages/visitas");
+		header("Location: index.php?secao=controller/visitas");
 	}
 ?>
 </div>
